@@ -6,5 +6,4 @@ socket.emit('greet', {say: 'Hello everybody', question: 'Whats going on in the h
 
 socket.on('greet', function(data){
     newData.innerHTML = data.say;
-    console.log(data)
 });
