@@ -15,4 +15,10 @@ const server = app.listen(3000, function(){
     console.log('lets chat on PORT 3K');
 });
 
-const socket 
+const io = socket(server); 
+
+io.on('connection', function(socket){
+    socket.on('new', function(message){
+        console.log(message);
+    });
+});

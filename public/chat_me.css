@@ -17,6 +17,9 @@
     height: 100%;
     float: left
 }
+.chat-container{
+    display: none;
+}
 #users{
     border-left: 1px solid grey;
     margin-left: 1%;
