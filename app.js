@@ -18,7 +18,7 @@ const server = app.listen(3000, function(){
 const io = socket(server); 
 
 io.on('connection', function(socket){
-    socket.on('new', function(message){
-        console.log(message);
+    socket.on('username', function(username){
+        console.log(username);
     });
 });
