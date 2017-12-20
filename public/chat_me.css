@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+#chat-container{
+    width: 95vw;
+    height: 90vh;
+    background-color: whitesmoke;
+    border: thin solid grey;
+    border-radius: 5%;
+    padding: 3%;
+    margin: 2%;
+}
+#chat-container div{
+    width: 48%;
+    height: 100%;
+    float: left
+}
+#users{
+    border-left: 1px solid grey;
+    margin-left: 1%;
+    background-color: white;
+}
+#users div{
+    width: 100%;
+    height: 49%;
+    margin: 1% 0;
+}
