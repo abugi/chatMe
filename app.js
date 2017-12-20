@@ -1,6 +1,6 @@
-const   express = require('express'),
-        socket=  require('socket.io'),
-        app = express();
+const   express     = require('express'),
+        socket      =  require('socket.io'),
+        app         = express();
 
 app.use(express.static('public'));
 
@@ -16,6 +16,6 @@ const io = socket(server);
 
 io.on('connection', function(socket){
     socket.on('greeting', function(data){
-        console.log('seen');
+        console.log(data);
     });
 });
