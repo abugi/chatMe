@@ -19,6 +19,6 @@ const io = socket(server);
 
 io.on('connection', function(socket){
     socket.on('username', function(username){
-        console.log(username);
+        io.sockets.emit('username', username.username);
     });
 });
