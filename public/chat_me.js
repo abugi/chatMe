@@ -1,5 +1,9 @@
 const socket = io.connect();
 
-socket.on('greenting', function(data){
-    socket.emit('greeting', 'Hello everyone')
+const button = document.querySelector('button');
+
+button.addEventListener('click', function(){
+    socket.on('greeting', function (data) {
+        socket.emit('greeting', {greet: 'Hello everyone'});
+    });
 });
