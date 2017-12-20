@@ -16,6 +16,6 @@ const io = socket(server);
 
 io.on('connection', function(socket){
     socket.on('greeting', function(data){
-        console.log(data);
+        console.log('seen');
     });
 });
