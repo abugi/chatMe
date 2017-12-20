@@ -5,7 +5,7 @@ const   express = require('express'),
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-    res.send('We are live!!');
+    res.sendFile('index.html');
 });
 
 const server = app.listen(3030, function(){
