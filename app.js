@@ -14,6 +14,8 @@ const server = app.listen(3030, function(){
 
 const io = socket(server);
 
-io.on('connection', function(data){
-    console.log('connection initiated');
+io.on('connection', function(socket){
+    socket.on('greeting', function(data){
+        console.log(data);
+    });
 });
