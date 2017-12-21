@@ -42,7 +42,7 @@ io.on('connection', function(socket){
     });
 
     socket.on('message', function(message){
-        console.log(message);
+        io.sockets.emit('message', {message: message, username: socket.username});
     });
 });
 

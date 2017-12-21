@@ -7,7 +7,7 @@ userRegister    = document.querySelector('#user-register'),
 chatContainer   = document.querySelector('#chat-container'),
 messagesDisplay = document.querySelector('#messages-display'),
 messageInput    = document.querySelector('#message-input'),
-send            = document.querySelector('send'),
+send            = document.querySelector('#send'),
 online          = document.querySelector('#online'),
 offline         = document.querySelector('#offline');
 
@@ -36,4 +36,9 @@ socket.on('username', function(usernames){
 
  send.addEventListener('click', function(){
      socket.emit('message', messageInput.value);
+ });
+
+ socket.on('message', function(message){
+     conaole.log(message);
+    //  messagesDisplay.innerHTML += '<P>' + message + '</p>';
  });
