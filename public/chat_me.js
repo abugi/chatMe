@@ -39,6 +39,6 @@ socket.on('username', function(usernames){
  });
 
  socket.on('message', function(message){
-     conaole.log(message);
+     console.log(message);
     //  messagesDisplay.innerHTML += '<P>' + message + '</p>';
  });
