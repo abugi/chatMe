@@ -24,12 +24,18 @@ io.on('connection', function(socket){
             cb = false;
         }else{
             cb = true;
-            usernames.push(username);
+            socket.username = username;
+            usernames.push(socket.username);
             updateUserNames();
         }
     });
+
+    socket.on('disconnect', function (socket) {
+        console.log('a user disconnected');
+    });
+
+    function updateUserNames() {
+        io.sockets.emit('username', usernames);
+    };
 });
 
-function updateUserNames(){
-    io.sockets.emit('username', usernames);
-};
