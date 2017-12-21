@@ -5,6 +5,9 @@ userName        = document.querySelector('input'),
 button          = document.querySelector('button'),
 userRegister    = document.querySelector('#user-register'),
 chatContainer   = document.querySelector('#chat-container'),
+messagesDisplay = document.querySelector('#messages-display'),
+messageInput    = document.querySelector('#message-input'),
+send            = document.querySelector('send'),
 online          = document.querySelector('#online'),
 offline         = document.querySelector('#offline');
 
@@ -29,4 +32,8 @@ socket.on('username', function(usernames){
          html += data[i];
      };
      offline.innerHTML += html + '<br>';
+ });
+
+ send.addEventListener('click', function(){
+     socket.emit('message', messageInput.value);
  });

@@ -40,5 +40,9 @@ io.on('connection', function(socket){
         updateUserNames();
         io.sockets.emit('offline', offline);
     });
+
+    socket.on('message', function(message){
+        console.log(message);
+    });
 });
 
