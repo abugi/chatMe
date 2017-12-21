@@ -30,14 +30,15 @@ io.on('connection', function(socket){
         }
     });
 
-    socket.on('disconnect', function (socket) {
-        if(!socket.username) return;
-        usernames.splice(usernames.indexOf(socket.username), 1);
-        updateUserNames();
-    });
-
-    function updateUserNames(){
+    function updateUserNames() {
         io.sockets.emit('username', usernames);
     };
+
+    socket.on('disconnect', function (data) {
+        if (!socket.username) return;
+        var offline = usernames.splice(usernames.indexOf(socket.username), 1);
+        updateUserNames();
+        io.sockets.emit('offline', offline);
+    });
 });
 
