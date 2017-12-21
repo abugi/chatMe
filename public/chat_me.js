@@ -28,4 +28,5 @@ socket.on('username', function(usernames){
      for(var i = 0; i < data.length; i++){
          html += data[i];
      };
+     offline.innerHTML += html + '<br>';
  });
