@@ -1,11 +1,11 @@
-const socket = io();
+const socket    = io();
 
 const
-userName = document.querySelector('input'),
-button = document.querySelector('button'),
-userRegister = document.querySelector('#user-register'),
-chatContainer = document.querySelector('#chat-container'),
-online = document.querySelector('#online');
+userName        = document.querySelector('input'),
+button          = document.querySelector('button'),
+userRegister    = document.querySelector('#user-register'),
+chatContainer   = document.querySelector('#chat-container'),
+online          = document.querySelector('#online');
 
 button.addEventListener('click', function(){
     socket.emit('username', userName.value);
