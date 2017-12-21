@@ -5,7 +5,8 @@ userName        = document.querySelector('input'),
 button          = document.querySelector('button'),
 userRegister    = document.querySelector('#user-register'),
 chatContainer   = document.querySelector('#chat-container'),
-online          = document.querySelector('#online');
+online          = document.querySelector('#online'),
+offline         = document.querySelector('#offline');
 
 button.addEventListener('click', function(){
     socket.emit('username', userName.value);
@@ -20,4 +21,11 @@ socket.on('username', function(usernames){
         html += usernames[i] + '<br>';
     }
     online.innerHTML = html;
+ });
+
+ socket.on('offline', function(data){
+     var html = '';
+     for(var i = 0; i < data.length; i++){
+         html += data[i];
+     };
  });
