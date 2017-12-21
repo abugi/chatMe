@@ -33,6 +33,7 @@
 #users div .active-users{
     background: black;
     height: 30px;
+    color: white;
 }
 #user-register{
     width: 40vw;
