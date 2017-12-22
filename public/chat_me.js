@@ -39,6 +39,5 @@ socket.on('username', function(usernames){
  });
 
  socket.on('message', function(message){
-     console.log(message);
-    //  messagesDisplay.innerHTML += '<P>' + message + '</p>';
+    messagesDisplay.innerHTML += '<P><strong>' + message.username + '</strong>:' + message.message + '</p>';
  });
