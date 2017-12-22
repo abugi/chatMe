@@ -2,7 +2,8 @@ const
 express     = require('express'),
 socket      = require('socket.io'),
 app         = express(),
-usernames   = [];
+usernames   = [],
+offUsernames = [];
 
 const dir = __dirname;
 
@@ -38,7 +39,7 @@ io.on('connection', function(socket){
         if (!socket.username) return;
         var offline = usernames.splice(usernames.indexOf(socket.username), 1);
         updateUserNames();
-        io.sockets.emit('offline', offline);
+        io.sockets.emit('offline', {offline: offline, usernames: usernames});
     });
 
     socket.on('message', function(message){
