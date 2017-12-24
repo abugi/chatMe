@@ -27,11 +27,11 @@ socket.on('username', function(usernames){
  });
 
  socket.on('offline', function(data){
-    //  var html = '';
-    //  for(var i = 0; i < data.length; i++){
-    //      html += data[i];
-    //  };
-    //  offline.innerHTML += html + '<br>';
+     var html = '';
+     for(var i = 0; i < data.length; i++){
+         html += data[i];
+     };
+     offline.innerHTML += html + '<br>';
  });
 
  send.addEventListener('click', function(){
