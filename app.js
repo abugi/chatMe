@@ -39,7 +39,7 @@ io.on('connection', function(socket){
         if (!socket.username) return;
         var offline = usernames.splice(usernames.indexOf(socket.username), 1);
         updateUserNames();
-        io.sockets.emit('offline', {offline: offline, usernames: usernames});
+        io.sockets.emit('offline', offline);
     });
 
     socket.on('message', function(message){
