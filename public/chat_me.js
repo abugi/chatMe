@@ -27,7 +27,6 @@ socket.on('username', function(usernames){
  });
 
  socket.on('offline', function(data){
-     console.log(data);
     //  var html = '';
     //  for(var i = 0; i < data.length; i++){
     //      html += data[i];
