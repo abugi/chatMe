@@ -41,7 +41,3 @@ socket.on('username', function(usernames){
  socket.on('message', function(message){
     messagesDisplay.innerHTML += '<P><strong>' + message.username + '</strong>:' + message.message + '</p>';
  });
-
- //i did not do any work today
- //so i decided to do this
- //just to get a green spot 
